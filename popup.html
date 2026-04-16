@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SEOPilot</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+
+  <header class="sp-header">
+    <div class="sp-logo">
+      <img src="icons/icon32.png" alt="SEOPilot" class="sp-logo-img" />
+      <span class="sp-logo-text">SEO<strong>Pilot</strong></span>
+    </div>
+    <div id="badgePro" class="sp-badge sp-badge--pro" style="display:none">PRO</div>
+    <div id="badgeFree" class="sp-badge sp-badge--free">FREE</div>
+  </header>
+
+  <div id="statusBanner" class="sp-status sp-status--scanning">
+    <span id="statusText">Ready to audit…</span>
+  </div>
+
+  <div id="usageSection" class="sp-usage-section" style="display:none">
+    <div class="sp-usage-label">
+      <span>Audits today</span>
+      <span id="usageCount">0 / 10</span>
+    </div>
+    <div class="sp-usage-track">
+      <div id="usageBar" class="sp-usage-bar" style="width:0%"></div>
+    </div>
+  </div>
+
+  <div id="actionsSection" class="sp-actions" style="display:none">
+    <button id="btnAudit" class="sp-btn sp-btn--primary" disabled>
+      🔍 Audit This Page
+    </button>
+    <button id="btnExport" class="sp-btn sp-btn--secondary" disabled style="display:none">
+      ⬇ Export Report (Pro) <span class="sp-pro-tag">PRO</span>
+    </button>
+  </div>
+
+  <div id="progressSection" class="sp-progress-section" style="display:none">
+    <div class="sp-spinner"></div>
+    <span id="progressText">Auditing page…</span>
+  </div>
+
+  <div id="resultsSection" class="sp-results-section" style="display:none">
+    <div class="sp-score-row">
+      <div class="sp-score-ring">
+        <canvas id="scoreCanvas" width="72" height="72"></canvas>
+        <div class="sp-score-num" id="scoreNum">--</div>
+      </div>
+      <div class="sp-score-info">
+        <div class="sp-score-label" id="scoreLabel">SEO Score</div>
+        <div class="sp-site-info" id="siteInfo"></div>
+      </div>
+    </div>
+
+    <div class="sp-tabs">
+      <button class="sp-tab active" data-tab="issues">Issues <span id="issueCount" class="sp-count sp-count--red">0</span></button>
+      <button class="sp-tab" data-tab="warnings">Warnings <span id="warnCount" class="sp-count sp-count--yellow">0</span></button>
+      <button class="sp-tab" data-tab="passes">Passes <span id="passCount" class="sp-count sp-count--green">0</span></button>
+    </div>
+
+    <div id="tab-issues" class="sp-tab-panel">
+      <div id="issuesList" class="sp-check-list"></div>
+    </div>
+    <div id="tab-warnings" class="sp-tab-panel" style="display:none">
+      <div id="warningsList" class="sp-check-list"></div>
+    </div>
+    <div id="tab-passes" class="sp-tab-panel" style="display:none">
+      <div id="passesList" class="sp-check-list"></div>
+    </div>
+
+    <div class="sp-meta-section" id="metaSection">
+      <div class="sp-meta-row"><span class="sp-meta-label">Title</span><span class="sp-meta-val" id="metaTitle"></span></div>
+      <div class="sp-meta-row"><span class="sp-meta-label">Description</span><span class="sp-meta-val" id="metaDesc"></span></div>
+      <div class="sp-meta-row"><span class="sp-meta-label">H1</span><span class="sp-meta-val" id="metaH1"></span></div>
+      <div class="sp-meta-row"><span class="sp-meta-label">Words</span><span class="sp-meta-val" id="metaWords"></span></div>
+      <div class="sp-meta-row"><span class="sp-meta-label">Images</span><span class="sp-meta-val" id="metaImgs"></span></div>
+      <div class="sp-meta-row"><span class="sp-meta-label">Int. Links</span><span class="sp-meta-val" id="metaIntLinks"></span></div>
+      <div class="sp-meta-row"><span class="sp-meta-label">Ext. Links</span><span class="sp-meta-val" id="metaExtLinks"></span></div>
+    </div>
+  </div>
+
+  <div id="upgradeSection" class="sp-upgrade" style="display:none">
+    <div class="sp-upgrade-copy">
+      <strong>Upgrade to Pro — $9/month</strong><br/>
+      Unlimited audits · Export report · Schema checker
+    </div>
+    <a href="https://gumroad.com/l/seopilot" target="_blank" class="sp-btn sp-btn--upgrade">Upgrade Now →</a>
+    <div class="sp-license-row">
+      <input id="licenseInput" class="sp-input" type="text" placeholder="SP-XXXX-XXXX-XXXX" />
+      <button id="btnActivate" class="sp-btn sp-btn--activate">Activate</button>
+    </div>
+    <div id="licenseMsg" class="sp-license-msg" style="display:none"></div>
+  </div>
+
+  <div id="proSection" class="sp-pro-section" style="display:none">
+    <span id="proKeyDisplay" class="sp-pro-key"></span>
+    <button id="btnDeactivate" class="sp-btn sp-btn--deactivate">Remove</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
