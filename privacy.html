@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — SEOPilot</title>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --green:#10b981;
+      --green-d:#059669;
+      --bg:#0b0f0e;
+      --surface:#121917;
+      --border:#1e2d28;
+      --text:#e8f0ec;
+      --muted:#6b8f7e;
+    }
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
+    header{background:var(--surface);border-bottom:1px solid var(--border);padding:18px 24px;display:flex;align-items:center;gap:12px}
+    header strong{color:var(--green);font-size:20px}
+    header span{color:var(--muted);font-size:14px}
+    .container{max-width:780px;margin:48px auto;padding:0 24px 80px}
+    h1{font-size:28px;margin-bottom:8px}
+    .subtitle{color:var(--muted);margin-bottom:40px;font-size:14px}
+    h2{font-size:18px;color:var(--green);margin:36px 0 10px}
+    p{color:var(--muted);margin-bottom:14px}
+    ul{color:var(--muted);padding-left:22px;margin-bottom:14px}
+    ul li{margin-bottom:6px}
+    a{color:var(--green);text-decoration:none}
+    a:hover{text-decoration:underline}
+    code{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:14px;color:var(--text)}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-top:40px}
+    .card p{margin:0;font-size:14px}
+    strong{color:var(--text)}
+  </style>
+</head>
+<body>
+
+<header>
+  <strong>SEOPilot</strong>
+  <span>/ Privacy Policy</span>
+</header>
+
+<div class="container">
+  <h1>Privacy Policy</h1>
+  <p class="subtitle">Last updated: April 2026</p>
+
+  <h2>Overview</h2>
+  <p>SEOPilot is a Chrome extension that performs on-page SEO audits of websites you visit. We are committed to protecting your privacy. This policy explains exactly what data we store, how we use it, and what we never do.</p>
+  <p>The short version: all data stays on your device. We do not collect, transmit, or see anything about your browsing or your audit results.</p>
+
+  <h2>Data We Store</h2>
+  <p>SEOPilot stores the following data <strong>locally on your device only</strong>, using Chrome's built-in <code>chrome.storage.local</code> API:</p>
+  <ul>
+    <li><strong>Daily usage count</strong> — the number of audits you have performed today. This is used solely to enforce the free plan limit of 10 audits per day. The count resets automatically at midnight each day and is never transmitted anywhere.</li>
+    <li><strong>License key</strong> — if you activate a Pro license, your license key is stored locally on your device to unlock unlimited audits and the report export feature. It is never sent to any external server.</li>
+  </ul>
+  <p>No audit results, page content, URLs, or personal information are ever stored, logged, or transmitted.</p>
+
+  <h2>Data We Do NOT Collect</h2>
+  <ul>
+    <li>We do not collect your name, email address, or any account information</li>
+    <li>We do not transmit any data to external servers or third parties</li>
+    <li>We do not track which websites you visit or audit</li>
+    <li>We do not store or log any SEO audit results</li>
+    <li>We do not use analytics, tracking pixels, or third-party SDKs of any kind</li>
+    <li>We do not share any data with advertisers or data brokers</li>
+  </ul>
+
+  <h2>Permissions Explained</h2>
+  <ul>
+    <li><strong>activeTab + scripting</strong> — Required to read the content of the currently open web page when you click the audit button. The extension injects a content script that inspects the page's title tag, meta tags, headings, images, links, schema markup, and other on-page signals. This only runs when you explicitly trigger an audit; the extension does not run in the background or read pages automatically.</li>
+    <li><strong>storage</strong> — Used exclusively to persist your daily audit count and Pro license key in <code>chrome.storage.local</code> on your local device. Nothing is synced to Chrome's remote storage.</li>
+    <li><strong>tabs</strong> — Used by the popup to read the URL and title of the active tab so the audit report can display the page being analyzed. No tab history or tab data is stored.</li>
+  </ul>
+
+  <h2>How the Extension Works</h2>
+  <p>When you click the SEOPilot icon and trigger an audit, the extension runs a content script on the active page. This script reads the page's DOM to evaluate on-page SEO signals: the title tag, meta description, H1 heading, image alt attributes, internal and external links, structured data (JSON-LD or microdata), HTTPS status, and the mobile viewport meta tag.</p>
+  <p>All of this processing happens entirely within your browser. The results are displayed in the extension popup and, on Pro, can be exported as a plain text file that is saved directly to your device. No audit data is sent anywhere.</p>
+
+  <h2>License Key Validation</h2>
+  <p>SEOPilot uses a simple local format check to validate your Pro license key. No network request is made during validation. Your key is stored only on your device and is never transmitted to any server.</p>
+
+  <h2>Children's Privacy</h2>
+  <p>SEOPilot is not directed at children under the age of 13 and does not knowingly collect any information from children.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>We may update this policy as the extension evolves. Any changes will be reflected on this page with an updated date. Continued use of the extension after changes constitutes acceptance of the updated policy.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this privacy policy? Contact us at <a href="mailto:tyris77@gmail.com">tyris77@gmail.com</a>.</p>
+
+  <div class="card">
+    <p><strong>Summary:</strong> SEOPilot stores nothing on our servers. The only data saved is your daily audit count and optional Pro license key, both stored locally on your device via <code>chrome.storage.local</code>. We never see what pages you audit or what issues are found.</p>
+  </div>
+</div>
+
+</body>
+</html>
